@@ -15,33 +15,67 @@ export default function Slide() {
             <div className="owl-carousel-item position-relative">
               <img className="img-fluid" src="/img/carousel-2.jpg" alt="" />
               <div
-                className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                style={{ background: "rgba(24, 29, 56, .7)" }}
+                className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                style={{ background: 'rgba(0, 0, 0, 0.7)' }}
               >
                 <div className="container">
-                  <div className="row justify-content-start">
-                    <div className="col-sm-10 col-lg-8">
-                      <h6 className="text-primary text-uppercase mb-2 animated slideInDown">
-                        Best Online Courses
+                  <div className="row justify-content-center">
+                    <div className="col-12 text-center">
+                      <h6 className="text-uppercase mb-2" style={{
+                        color: 'var(--accent-primary)',
+                        fontWeight: '600',
+                        letterSpacing: '2px'
+                      }}>
+                        Professional Learning
                       </h6>
-                      <h1 className="display-4 text-white animated slideInDown">
-                        The Best Online Learning Platform
+                      <h1 className="display-4" style={{
+                        fontWeight: '700',
+                        letterSpacing: '-0.02em',
+                        color: '#FFFFFF',
+                        whiteSpace: 'nowrap',
+                        overflow: 'visible',
+                        textOverflow: 'clip',
+                        width: 'auto',
+                        minWidth: 'max-content'
+                      }}>
+                        eLEARNING Platform
                       </h1>
-                      <p className="fs-5 text-white mb-4 pb-2">
-                        Welcome to eLearn, your gateway to limitless learning!
-                        Discover a world of knowledge with our wide range of
+                      <p className="fs-5 mb-4 pb-2" style={{
+                        color: '#FFFFFF',
+                        lineHeight: '1.7'
+                      }}>
+                        Welcome to eLEARNING, your professional gateway to limitless learning!
+                        Discover a world of knowledge with our comprehensive range of
                         courses designed to empower and inspire. Start your
-                        learning journey today and unlock your full potential!{" "}
+                        learning journey today and unlock your full potential!
                       </p>
                       <Link
                         to=""
-                        className="btn btn-primary py-md-3 px-md-3 me-4 animated slideInLeft z-5"
+                        className="btn py-md-3 px-md-3 me-4"
+                        style={{
+                          background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                          border: 'none',
+                          color: '#FFFFFF',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          borderRadius: '8px'
+                        }}
                       >
                         Read More
                       </Link>
                       <Link
                         to="/courses"
-                        className="btn btn-primary py-md-3 px-md-4 animated slideInRight"
+                        className="btn py-md-3 px-md-4"
+                        style={{
+                          background: 'transparent',
+                          border: '2px solid #FFD700',
+                          color: '#FFFFFF',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          borderRadius: '8px'
+                        }}
                       >
                         Enroll Now
                       </Link>
@@ -56,32 +90,66 @@ export default function Slide() {
             <div className="owl-carousel-item position-relative">
               <img className="img-fluid" src="/img/carousel-1.jpg" alt="" />
               <div
-                className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                style={{ background: "rgba(24, 29, 56, .7)" }}
+                className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                style={{ background: 'rgba(0, 0, 0, 0.7)' }}
               >
                 <div className="container">
-                  <div className="row justify-content-start">
-                    <div className="col-sm-10 col-lg-8">
-                      <h6 className="text-primary text-uppercase mb-2 animated slideInDown">
-                        Best Online Courses
+                  <div className="row justify-content-center">
+                    <div className="col-12 text-center">
+                      <h6 className="text-uppercase mb-2" style={{
+                        color: 'var(--accent-primary)',
+                        fontWeight: '600',
+                        letterSpacing: '2px'
+                      }}>
+                        Expert Training
                       </h6>
-                      <h1 className="display-4 text-white animated slideInDown">
-                        Get Educated Online From Your Home
+                      <h1 className="display-4" style={{
+                        fontWeight: '700',
+                        letterSpacing: '-0.02em',
+                        color: '#FFFFFF',
+                        whiteSpace: 'nowrap',
+                        overflow: 'visible',
+                        textOverflow: 'clip',
+                        width: 'auto',
+                        minWidth: 'max-content'
+                      }}>
+                        Professional Online Education
                       </h1>
-                      <p className="fs-5 text-white mb-4 pb-2">
-                        Unlock a world of possibilities with eLearn. Enroll now
+                      <p className="fs-5 mb-4 pb-2" style={{
+                        color: '#FFFFFF',
+                        lineHeight: '1.7'
+                      }}>
+                        Unlock a world of possibilities with eLEARNING. Enroll now
                         to access our cutting-edge courses and elevate your
-                        learning experience!.
+                        professional learning experience!
                       </p>
                       <Link
                         to=""
-                        className="btn btn-primary py-md-3 px-md-4 me-4 animated slideInLeft z-5"
+                        className="btn py-md-3 px-md-4 me-4"
+                        style={{
+                          background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                          border: 'none',
+                          color: '#FFFFFF',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          borderRadius: '8px'
+                        }}
                       >
                         Read More
                       </Link>
                       <Link
                         to="/courses"
-                        className="btn btn-primary py-md-3 px-md-4 animated slideInRight"
+                        className="btn py-md-3 px-md-4"
+                        style={{
+                          background: 'transparent',
+                          border: '2px solid #FFD700',
+                          color: '#FFFFFF',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          borderRadius: '8px'
+                        }}
                       >
                         Enroll Now
                       </Link>
@@ -118,6 +186,7 @@ export default function Slide() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+
     </>
   );
 }

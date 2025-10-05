@@ -1,7 +1,9 @@
+/* Import Forms CSS */
+@import url('./forms.css');
+
 /********** Template CSS **********/
 :root {
-    /* --primary: #06BBCC; */
-    --primary: #74b1fc;
+    --primary: #06BBCC;
     --light: #F0FBFC;
     --dark: #181d38;
 }
@@ -136,22 +138,57 @@
         margin-top: 0;
         opacity: 0;
         visibility: hidden;
-        transition: .5s;
+        transition: all 0.3s ease;
+        z-index: 1050;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
     }
 
     .navbar .dropdown-menu.fade-down {
         top: 100%;
-        transform: rotateX(-75deg);
+        transform: translateY(-10px);
         transform-origin: 0% 0%;
     }
 
     .navbar .nav-item:hover .dropdown-menu {
         top: 100%;
-        transform: rotateX(0deg);
+        transform: translateY(0);
         visibility: visible;
-        transition: .5s;
+        transition: all 0.3s ease;
         opacity: 1;
     }
+}
+
+/* Additional dropdown styling for better visibility */
+.navbar .dropdown-menu {
+    background-color: #2a2a2a !important;
+    border: 2px solid #FFD700 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+    margin-top: 8px !important;
+    padding: 0.5rem 0 !important;
+}
+
+.navbar .dropdown-item {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+    padding: 12px 20px !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    text-decoration: none !important;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: rgba(255, 215, 0, 0.2) !important;
+    color: #FFD700 !important;
+}
+
+.navbar .dropdown-item:focus {
+    background-color: rgba(255, 215, 0, 0.2) !important;
+    color: #FFD700 !important;
+    outline: none !important;
 }
 
 
@@ -285,6 +322,18 @@
 .category a:hover img,
 .course-item:hover img {
     transform: scale(1.1);
+}
+
+.category-overlay {
+    margin: 1px;
+}
+
+.category-large {
+    min-height: 350px;
+}
+
+.category-image {
+    object-fit: cover;
 }
 
 

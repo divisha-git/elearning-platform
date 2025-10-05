@@ -15,7 +15,7 @@ export default function Html() {
                     </div>
                     <div className="row g-2 justify-content-center">
 
-                        <Coursecart link="http://localhost:8080/HTML Tutorial.mp4" title="HTML Tutorial" desc="HTML full video Tutorial in one video" />
+                        <Coursecart link="https://www.youtube.com/watch?v=kUMe1FH4CHE" title="HTML Tutorial" desc="HTML full video Tutorial in one video" />
 
                     </div>
                 </div>

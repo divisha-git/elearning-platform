@@ -56,11 +56,11 @@
             "saleability": "FOR_SALE",
             "isEbook": true,
             "listPrice": {
-                "amount": 2082.7,
+                "amount": 1,
                 "currencyCode": "INR"
             },
             "retailPrice": {
-                "amount": 2082.7,
+                "amount": 1,
                 "currencyCode": "INR"
             },
             "buyLink": "https://play.google.com/store/books/details?id=lfHo7uMk7r4C&rdid=book-lfHo7uMk7r4C&rdot=1&source=gbs_api",
@@ -154,11 +154,11 @@
             "saleability": "FOR_SALE",
             "isEbook": true,
             "listPrice": {
-                "amount": 370,
+                "amount": 1,
                 "currencyCode": "INR"
             },
             "retailPrice": {
-                "amount": 259,
+                "amount": 1,
                 "currencyCode": "INR"
             },
             "buyLink": "https://play.google.com/store/books/details?id=Kd4mEAAAQBAJ&rdid=book-Kd4mEAAAQBAJ&rdot=1&source=gbs_api",

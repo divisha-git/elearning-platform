@@ -4,68 +4,77 @@ export default function Footer() {
   return (
     <>
       <div
-        className="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+        className="container-fluid text-light footer pt-5 mt-5 wow fadeIn"
         data-wow-delay="0.1s"
+        style={{
+          backgroundColor: 'var(--bg-secondary)',
+          borderTop: '2px solid var(--accent-primary)'
+        }}
       >
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-lg-3 col-md-6">
-              <h4 className="text-white mb-3">Quick Link</h4>
-              <a className="btn btn-link" href>
+              <h4 className="mb-3" style={{color: 'var(--text-primary)', fontWeight: '600'}}>Quick Link</h4>
+              <a className="btn btn-link" href style={{color: 'var(--text-secondary)', textDecoration: 'none'}}>
                 About Us
               </a>
-              <a className="btn btn-link" href>
+              <a className="btn btn-link" href style={{color: 'var(--text-secondary)', textDecoration: 'none'}}>
                 Contact Us
               </a>
-              <a className="btn btn-link" href>
+              <a className="btn btn-link" href style={{color: 'var(--text-secondary)', textDecoration: 'none'}}>
                 Privacy Policy
               </a>
-              <a className="btn btn-link" href>
+              <a className="btn btn-link" href style={{color: 'var(--text-secondary)', textDecoration: 'none'}}>
                 Terms &amp; Condition
               </a>
-              <a className="btn btn-link" href>
+              <a className="btn btn-link" href style={{color: 'var(--text-secondary)', textDecoration: 'none'}}>
                 FAQs &amp; Help
               </a>
             </div>
             <div className="col-lg-3 col-md-6">
-              <h4 className="text-white mb-3">Contact</h4>
-              <p className="mb-2">
+              <h4 className="mb-3" style={{color: 'var(--text-primary)', fontWeight: '600'}}>Contact</h4>
+              <p className="mb-2" style={{color: 'var(--text-secondary)'}}>
                 <i className="fa fa-map-marker-alt me-3" />
-                Chennai, Tamil Nadu, India
+                Perundurai, Tamil Nadu, India
               </p>
-              <p className="mb-2">
+              <p className="mb-2" style={{color: 'var(--text-secondary)'}}>
                 <i className="fa fa-phone-alt me-3" />
-                +091 705 088 9705
+                +091 9345655403
               </p>
-              <p className="mb-2">
+              <p className="mb-2" style={{color: 'var(--text-secondary)'}}>
                 <i className="fa fa-envelope me-3" />
-                basantgoswami7050@gmail.com
+                elearning@gmail.com
               </p>
               <div className="d-flex pt-2">
                 <a
-                  className="btn btn-outline-light btn-social"
+                  className="btn btn-social"
                   href="https://www.youtube.com/channel/UCESPlHcn45qCQe9YiH43MRw"
                   target="_blank"
+                  style={{
+                    border: '1px solid var(--dark-accent-primary)',
+                    color: 'var(--dark-accent-primary)',
+                    background: 'transparent'
+                  }}
                 >
                   <i className="fab fa-youtube" />
                 </a>
                 <a
                   className="btn btn-outline-light btn-social"
-                  href="https://www.facebook.com/basant.bharati.54/"
+                  href="#"
                   target="_blank"
                 >
                   <i className="fab fa-facebook-f" />
                 </a>
                 <a
                   className="btn btn-outline-light btn-social"
-                  href="https://github.com/Basant-goswami"
+                  href="#"
                   target="_blank"
                 >
                   <i className="fab fa-github" />
                 </a>
                 <a
                   className="btn btn-outline-light btn-social"
-                  href="https://www.linkedin.com/in/basant-kumar-bharati"
+                  href="#"
                   target="_blank"
                 >
                   <i className="fab fa-linkedin-in" />
@@ -155,10 +164,10 @@ export default function Footer() {
                 , All Right Reserved. Designed By{" "}
                 <a
                   className="border-bottom"
-                  href="https://www.linkedin.com/in/basant-kumar-bharati"
+                  href="#"
                   target="_blank"
                 >
-                  DSCET IT Dept final year student
+                  eLearning Team
                 </a>
                 <br />
                 <br />

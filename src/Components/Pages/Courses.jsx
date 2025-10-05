@@ -12,9 +12,10 @@ export default function Cources() {
     price: "$389.00",
     review: 245,
     title: "Web Design & Development Course for Beginners",
-    teachername: "Basant",
+    teachername: "Divisha",
     duration: "9.50 Hrs",
     totalstudent: "335",
+    videoUrl: "https://www.youtube.com/watch?v=j6Ule7GXaRs",
   };
 
   const obj2 = {
@@ -25,9 +26,10 @@ export default function Cources() {
     price: "$189.00",
     review: 85,
     title: "Basic & Core Java Programming Language",
-    teachername: "Basant",
+    teachername: "Divisha",
     duration: "4.50 Hrs",
     totalstudent: "65",
+    videoUrl: "https://www.youtube.com/watch?v=eIrMbAQSU34",
   };
 
   const obj3 = {
@@ -38,9 +40,10 @@ export default function Cources() {
     price: "$219.00",
     review: 95,
     title: "Data Structure & Algorithms Using Java",
-    teachername: "Basant",
+    teachername: "Divisha",
     duration: "4.50 Hrs",
     totalstudent: "57",
+    videoUrl: "https://www.youtube.com/watch?v=BBpAmxU_NQo",
   };
 
   return (
@@ -68,10 +71,7 @@ export default function Cources() {
                     to="/courses/mern"
                   >
                     <img className="img-fluid" src="/img/cat-1.jpg" alt="" />
-                    <div
-                      className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                      style={{ margin: "1px" }}
-                    >
+                    <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-overlay">
                       <h5 className="m-0">MERN Stack</h5>
                       <small className="text-primary">4 Courses</small>
                     </div>
@@ -86,10 +86,7 @@ export default function Cources() {
                     to="/courses/fullstack"
                   >
                     <img className="img-fluid" src="/img/cat-2.jpg" alt="" />
-                    <div
-                      className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                      style={{ margin: "1px" }}
-                    >
+                    <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-overlay">
                       <h5 className="m-0">Full Stack Web Devlopment</h5>
                       <small className="text-primary">8 Courses</small>
                     </div>
@@ -104,10 +101,7 @@ export default function Cources() {
                     to="/cources/programming"
                   >
                     <img className="img-fluid" src="/img/cat-3.jpg" alt="" />
-                    <div
-                      className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                      style={{ margin: "1px" }}
-                    >
+                    <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-overlay">
                       <h5 className="m-0">Programming Languages Tutorial</h5>
                       <small className="text-primary">4 Courses</small>
                     </div>
@@ -116,23 +110,20 @@ export default function Cources() {
               </div>
             </div>
             <div
-              className="col-lg-5 col-md-6 wow zoomIn"
+              className="col-lg-5 col-md-6 wow zoomIn category-large"
               data-wow-delay="0.7s"
-              style={{ minHeight: "350px" }}
             >
               <a
                 className="position-relative d-block h-100 overflow-hidden"
                 href
               >
                 <img
-                  className="img-fluid position-absolute w-100 h-100"
+                  className="img-fluid position-absolute w-100 h-100 category-image"
                   src="/img/cat-4.jpg"
                   alt=""
-                  style={{ objectFit: "cover" }}
                 />
                 <div
-                  className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                  style={{ margin: "1px" }}
+                  className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-overlay"
                 >
                   <h5 className="m-0">Online Marketing</h5>
                   <small className="text-primary">1 Course</small>

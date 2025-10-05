@@ -1,0 +1,55 @@
+/* Scoped styles for the Feedback page only */
+.feedback-page .form-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+/* Inputs/textarea look like clean text boxes */
+.feedback-page .form-group label,
+.feedback-page label.form-label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.6rem; /* space above control */
+}
+
+/* Ensure extra gap between the label text (e.g., Email Address, Comment) and the field */
+.feedback-page .form-group label + .form-control,
+.feedback-page label.form-label + .form-control {
+  margin-top: 0.5rem; /* extra gap directly below the label */
+}
+
+.feedback-page .form-control {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 0.85rem 1rem 0.6rem 1rem; /* comfy padding, pushes text down a bit */
+  line-height: 1.5;
+}
+
+.feedback-page .form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.15);
+}
+
+/* Textarea spacing so first line does not collide with label */
+.feedback-page textarea.form-control {
+  min-height: 140px;
+  padding-top: 1.25rem;
+  resize: vertical;
+}
+
+/* Submit button */
+.feedback-page .btn-primary {
+  background: linear-gradient(135deg,#00c2cc,#00a3d7);
+  border: none;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.feedback-page .btn-primary:hover {
+  filter: brightness(0.98);
+}

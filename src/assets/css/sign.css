@@ -1,0 +1,27 @@
+/* Simple text box style for Sign page only (match contact-style look) */
+.sign-simple .form-control {
+  background: #fff !important;
+  border: 1px solid #dee2e6 !important;   /* light gray border */
+  border-radius: 8px !important;          /* soft rounded corners */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06) !important; /* subtle shadow */
+  /* Top, Right, Bottom, Left (extra left space for clear gap from label/icon) */
+  padding: 0.85rem 1rem 0.6rem 1.8rem !important;
+  height: auto !important;                /* no fixed height */
+  line-height: 1.5 !important;            /* vertically centered text */
+}
+
+.sign-simple .form-control::placeholder {
+  color: #6c757d !important;              /* muted placeholder */
+  font-style: italic !important;
+}
+
+.sign-simple .form-control:focus {
+  border-color: #86b7fe !important;       /* subtle blue border */
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15) !important; /* soft focus ring */
+}
+
+/* ensure labels sit above nicely */
+.sign-simple label.form-label {
+  margin-bottom: 1rem; /* larger gap between label and input */
+  font-weight: 600;
+}

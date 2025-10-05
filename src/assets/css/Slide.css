@@ -8,3 +8,69 @@
 .carousel-control-prev{
     left: -4%;
 }
+
+/* Fix carousel text positioning - centered */
+.carousel-item .position-absolute {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.carousel-item .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.carousel-item h1 {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    max-width: none !important;
+    text-align: center !important;
+}
+
+@media (max-width: 768px) {
+    .carousel-item h1 {
+        white-space: normal !important;
+        font-size: 2rem !important;
+    }
+    .carousel-item .position-absolute {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Remove blue outline/focus on carousel controls */
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.carousel-control-prev-icon:focus,
+.carousel-control-next-icon:focus,
+.carousel-control-prev-icon:active,
+.carousel-control-next-icon:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Remove any blue border or outline on button elements */
+button.carousel-control-prev,
+button.carousel-control-next {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+button.carousel-control-prev:focus,
+button.carousel-control-next:focus,
+button.carousel-control-prev:active,
+button.carousel-control-next:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}

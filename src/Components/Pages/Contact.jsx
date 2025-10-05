@@ -1,33 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function Contact() {
-  const [result, setResult] = React.useState("");
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState("");
 
   const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token);
+    setCaptchaToken(token);
   };
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     setResult("Sending....");
-    const formData = new FormData(event.target);
 
-    formData.append("access_key", "b9fd69e0-c307-4f57-b90f-9c4106746fcb");
+    try {
+      const formData = new FormData(event.target);
+      
+      const contactData = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        message: formData.get('message'),
+        subject: formData.get('subject') || 'New Contact Form Submission'
+      };
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+      console.log('Sending contact data:', contactData);
+      const response = await axios.post('http://localhost:3000/api/contact', contactData);
+      console.log('Contact response:', response.data);
 
-    const data = await response.json();
+      if (response.status === 201) {
+        setResult("Message sent successfully! We will get back to you soon.");
+        event.target.reset();
+        setCaptchaToken("");
+      }
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+    } catch (error) {
+      console.error('Contact form error:', error);
+      console.error('Error response:', error.response);
+      if (error.code === 'ECONNREFUSED') {
+        setResult("Cannot connect to server. Please try again later or contact us directly.");
+      } else if (error.response?.status === 500) {
+        setResult("Server error occurred. Please try again later.");
+      } else {
+        setResult(error.response?.data?.message || "Failed to send message. Please try again.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,8 +69,7 @@ export default function Contact() {
             >
               <h5>Get In Touch</h5>
               <p className="mb-4">
-                The contact form is currently inactive. Please contact on phone,
-                mail or social-media.
+                Send us a message using the contact form and we'll get back to you soon!
               </p>
               <div className="d-flex align-items-center mb-3">
                 <div
@@ -60,7 +80,7 @@ export default function Contact() {
                 </div>
                 <div className="ms-3">
                   <h5 className="text-primary">Office</h5>
-                  <p className="mb-0">DSCET chennai,Tamil Nadu</p>
+                  <p className="mb-0">Kongu Engineering College, Perundurai, Tamil Nadu</p>
                 </div>
               </div>
               <div className="d-flex align-items-center mb-3">
@@ -84,7 +104,7 @@ export default function Contact() {
                 </div>
                 <div className="ms-3">
                   <h5 className="text-primary">Email</h5>
-                  <p className="mb-0">basantgoswami7050@gmail.com</p>
+                  <p className="mb-0">elearning@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -94,7 +114,7 @@ export default function Contact() {
             >
               <iframe
                 className="position-relative rounded w-100 h-100"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4327.512444698837!2d80.17810250948644!3d12.620432297105136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53ab5250243c71%3A0xbb338ff75412f3f5!2sDhanalakshmi%20Srinivasan%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1710127521636!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.268726789084!2d77.31740731482394!3d11.341000091896598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f46762f4671%3A0x8b1c8b1c8b1c8b1c!2sKongu%20Engineering%20College!5e0!3m2!1sen!2sin!4v1710127521636!5m2!1sen!2sin"
                 frameBorder={0}
                 style={{ minHeight: "300px", border: 0 }}
                 allowFullScreen
@@ -111,55 +131,57 @@ export default function Contact() {
 
                 <div className="row g-3">
                   <div className="col-md-6">
-                    <div className="form-floating">
+                    <div className="mb-3">
+                      <label htmlFor="name" className="form-label">Your Name</label>
                       <input
                         type="text"
                         className="form-control"
                         name="name"
                         id="name"
-                        placeholder="Your Name"
+                       
                         required
                       />
-                      <label htmlFor="name">Your Name</label>
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="form-floating">
+                    <div className="mb-3">
+                      <label htmlFor="email" className="form-label">Your Email</label>
                       <input
                         type="email"
                         className="form-control"
                         id="email"
                         name="email"
-                        placeholder="Your Email"
+                        
                         required
                       />
-                      <label htmlFor="email">Your Email</label>
                     </div>
                   </div>
                   <div className="col-12">
-                    <div className="form-floating">
+                    <div className="mb-3">
+                      <label htmlFor="phone" className="form-label">Mobile No</label>
                       <input
-                        type="number"
+                        type="tel"
                         className="form-control"
                         id="phone"
                         name="phone"
-                        placeholder="Mobile No"
+                        inputMode="numeric"
+                        pattern="[0-9]{10,15}"
+                      
                         required
                       />
-                      <label htmlFor="subject">Mobile No</label>
                     </div>
                   </div>
                   <div className="col-12">
-                    <div className="form-floating">
+                    <div className="mb-3">
+                      <label htmlFor="message" className="form-label">Message</label>
                       <textarea
                         className="form-control"
-                        placeholder="Leave a message here"
                         id="message"
                         name="message"
-                        style={{ height: "150px" }}
-                        defaultValue={""}
-                      />
-                      <label htmlFor="message">Message</label>
+                        style={{ height: "100px" }}
+                        placeholder="Type your message here"
+                        required
+                      ></textarea>
                     </div>
                   </div>
                   <input
@@ -178,8 +200,16 @@ export default function Contact() {
                     <button
                       className="btn btn-primary w-100 py-3"
                       type="submit"
+                      disabled={loading}
                     >
-                      Send Message
+                      {loading ? (
+                        <>
+                          <span className="spinner-border spinner-border-sm me-2" role="status"></span>
+                          Sending...
+                        </>
+                      ) : (
+                        'Send Message'
+                      )}
                     </button>
                   </div>
                 </div>

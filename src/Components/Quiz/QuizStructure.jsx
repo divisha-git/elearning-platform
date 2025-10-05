@@ -34,25 +34,43 @@ export default function QuizStructure({ Questions, path}) {
 
     return (
         <>
-            <div className="Quiz m-5">
-                <h2 className='text-center mb-5 heading'>Quiz page</h2>
+            <div className="Quiz">
+                <h2 className='heading'>Interactive Quiz</h2>
                 
-                <div className="container bg-primary ">
+                <div className="container">
                     {isLast ?
                         <Showresult result={result} total={Questions.length} tryAgain={resetAll} path={path} />
                         : (
                             <>
                                 <div className="question">
-                                    <span>{currQues + 1}.&nbsp;
-                                        <span>{Questions[currQues].Question}</span> </span>
+                                    <span>
+                                        <strong>Question {currQues + 1} of {Questions.length}:</strong><br/>
+                                        {Questions[currQues].Question}
+                                    </span>
                                 </div>
                                 <div className="option">
                                     {Questions[currQues].Options.map((el, i) =>
-                                        <button className={`btn w-100 my-1 ${ans === el ? "checked" : null}`} key={i} onClick={() => (setAns(el))}>{el}</button>
+                                        <button 
+                                            className={`btn ${ans === el ? "checked" : ""}`} 
+                                            key={i} 
+                                            onClick={() => (setAns(el))}
+                                        >
+                                            <span className="me-3">
+                                                {String.fromCharCode(65 + i)}.
+                                            </span>
+                                            {el}
+                                        </button>
                                     )}
                                 </div>
                                 <div className='nextbtn'>
-                                    <button className='btn btn-danger text-center' onClick={nextHandle}>Next</button>
+                                    <button 
+                                        className='btn' 
+                                        onClick={nextHandle}
+                                        disabled={!ans}
+                                    >
+                                        {currQues === Questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
+                                        <i className="fas fa-arrow-right ms-2"></i>
+                                    </button>
                                 </div>
                             </>
                         )}

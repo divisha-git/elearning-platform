@@ -13,7 +13,7 @@ import BotpressChatbot from '../Ebook/BotpressChatbot'
 
 export default function Home() {
     return (
-        <>
+        <div style={{backgroundColor: 'var(--bg-primary)', minHeight: '100vh'}}>
             <Spinner/>
             <Navbar/>
             <Slide/>
@@ -22,8 +22,7 @@ export default function Home() {
             <Courses/>
             <Team/>
             <Testimonial/>
-            <Footer/>  
-            <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
-        </>
+            <Footer/>
+        </div>
     )
 }
