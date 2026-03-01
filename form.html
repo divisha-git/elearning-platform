@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e2a36;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #888;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: -8px;
+      left: 10px;
+      font-size: 13px;
+      background: #fff;
+      padding: 0 5px;
+      color: #333;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #ffde00;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <form>
+      <div class="input-group">
+        <input type="text" id="fullname" name="fullname" placeholder=" " required>
+        <label for="fullname">Full Name</label>
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" name="email" placeholder=" " required>
+        <label for="email">Email Address</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder=" " required>
+        <label for="password">Password</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="confirm" name="confirm" placeholder=" " required>
+        <label for="confirm">Confirm Password</label>
+      </div>
+      <button class="btn">Create Account</button>
+    </form>
+  </div>
+
+</body>
+</html>
